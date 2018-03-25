@@ -25,3 +25,7 @@
 - misc.py  
 其他函数  
 
+## 运行
+```
+$ python main.py --vec_len=300
+```
