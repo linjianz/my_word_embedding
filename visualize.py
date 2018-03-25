@@ -15,9 +15,9 @@ from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 
 
-def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):
+def plot_with_labels(low_dim_embs, labels, filename='tsne-300.png'):
     assert low_dim_embs.shape[0] == len(labels), "Number of embeddings and labels should be equal"
-    plt.figure(figsize=(18, 18))  # in inches
+    plt.figure(figsize=(12, 12))  # in inches
     for i, label in enumerate(labels):
         x, y = low_dim_embs[i, :]
         plt.scatter(x, y)
@@ -40,7 +40,7 @@ def cmp(x, y):
 
 if __name__ == '__main__':
     tsne = TSNE(perplexity=30, n_components=2, init='pca', n_iter=5000)
-    plot_only = 500
+    plot_only = 300
     dir_load = './data'
     print('Sort the words by frequency')
     with open(dir_load+'/word_vector.pkl', 'rb') as f:

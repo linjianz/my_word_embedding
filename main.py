@@ -110,7 +110,7 @@ class Word2Vec(object):
             q = sigmoid(input_vector.dot(node.value.T))         # 为什么不是average后再点乘？？？
             grad = self.lr * (1-int(huffman_char)-q)            # 计算梯度
             e += grad * node.value                              # 累加当前词的梯度变化
-            node.value += grad * input_vector                   # 跟新结点的向量
+            node.value += grad * input_vector                   # 更新结点的向量
             node.value = normalize(node.value)
             if huffman_char == '0':
                 node = node.right
